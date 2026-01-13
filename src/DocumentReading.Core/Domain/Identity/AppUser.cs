@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DocumentReading.Core.Domain.Identity
 {
-    internal class AppUser : IdentityUser<Guid>
+    [Table("AppUsers")]
+    public class AppUser : IdentityUser<Guid>
     {
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
