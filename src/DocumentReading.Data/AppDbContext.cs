@@ -54,7 +54,8 @@ namespace DocumentReading.Data
                 }
             }
 
-            return base.SaveChangesAsync(cancellationToken);
+            // Call the same overload on the base class to avoid recursion
+            return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
     }
 }

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using DocumentReading.Core.Domain.Identity;
 using DocumentReading.Data;
+using DocumentReading.API;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -59,5 +60,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MigrateDatabase();
 
 app.Run();
